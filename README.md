@@ -29,7 +29,7 @@ Consult the Go documentation for valid values of GOOS and GOARCH.
 $ ./purge-dockerhub  --help
 2021/05/24 16:13:48 purge-dockerhub version 1.0, https://github.com/fredex42/purge-dockerhub
 Usage of ./purge-dockerhub:
-  -credentails string
+  -credentials string
     	yaml-format file containing the credentials to log in to Docker Hub (default "docker-credentials.yaml")
   -keepcount int
     	Always keep this many images regardless of age (default 150)
@@ -65,7 +65,7 @@ please reduce it to whatever number you need.
 
 ### Test it
 
-Run the app, e.g. `./purge-dockerhub -credentails /etc/secret/docker.yaml -keepcount 5 -keepdays 30 -org my-organisation` 
+Run the app, e.g. `./purge-dockerhub -credentials /etc/secret/docker.yaml -keepcount 5 -keepdays 30 -org my-organisation` 
 will delete everything from "my-organisation" that has not been pulled or pushed for 30 days or more, but leave the first
 5 tags regardless.
 Check the output to verify it is doing what you expect.  **Nothing will be deleted** until you specify `-really-delete` on

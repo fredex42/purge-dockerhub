@@ -35,7 +35,7 @@ func loadCredentials(filepathPtr *string) *dockerhub.DHLoginRequest {
 func main() {
 	log.Print("purge-dockerhub version 1.0, https://github.com/fredex42/purge-dockerhub")
 
-	credentialsFile := flag.String("credentails", "docker-credentials.yaml", "yaml-format file containing the credentials to log in to Docker Hub")
+	credentialsFile := flag.String("credentials", "docker-credentials.yaml", "yaml-format file containing the credentials to log in to Docker Hub")
 	orgPtr := flag.String("org", "", "organisation")
 	keepDuration := flag.Int("keepdays", 0, "Any item which has been pulled or pushed within this number of days will be kept. 0 disables the check.")
 	alwaysKeep := flag.Int("keepcount", 150, "Always keep this many images regardless of age")

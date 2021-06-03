@@ -35,7 +35,7 @@ func doDelete(client *http.Client, token dockerhub.DockerHubToken, result *Decis
 		if response.StatusCode >= 200 && response.StatusCode < 300 {
 			log.Printf("DEBUG Delete was successful, server returned %s", string(responseBody))
 			return nil
-		} else if response.StatusCode == 429 { //rate limit exceeded
+		} else if response.StatusCode == 429 || response.StatusCode == 502 { //rate limit exceeded, Bad Gateway
 			log.Printf("INFO We are sending requests too fast, waiting before sending the next delete")
 			maybeRetryAfter := response.Header.Get("Retry-After")
 			if maybeRetryAfter != "" {

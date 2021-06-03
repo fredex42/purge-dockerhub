@@ -7,7 +7,7 @@ import (
 
 type DHLoginRequest struct {
 	Username string `json:"username" yaml:"username"`
-	Password string `json:"password" yaml:"username"`
+	Password string `json:"password" yaml:"password"`
 }
 
 type DockerLoginResponse struct {
